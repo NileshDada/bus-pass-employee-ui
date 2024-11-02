@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import DepartmentService from "../../services/MasterService/DepartmentService";
-import DesignationService from "../../services/MasterService/DesignationService";
+import DepartmentService from "../../services/EmployeeMasterService/DepartmentService";
+import DesignationService from "../../services/EmployeeMasterService/DesignationService";
 import EmployeeService from "../../services/EmployeeService";
-import EmployeeTypeService from "../../services/MasterService/EmployeeTypeService";
-import RegionService from "../../services/MasterService/RegionService";
-import RoleService from "../../services/MasterService/RoleService";
-import SiteService from "../../services/MasterService/SiteService";
-import CompanyMasterService from "../../services/MasterService/CompanyMasterService";
+import EmployeeTypeService from "../../services/EmployeeMasterService/EmployeeTypeService";
+import RegionService from "../../services/EmployeeMasterService/RegionService";
+import RoleService from "../../services/EmployeeMasterService/RoleService";
+import SiteService from "../../services/EmployeeMasterService/SiteService";
+import CompanyMasterService from "../../services/EmployeeMasterService/CompanyMasterService";
 import { BASE_URL_API } from "../../services/URLConstants";
 export default function MainEmployeeComponent() {
     const navigate = useNavigate();

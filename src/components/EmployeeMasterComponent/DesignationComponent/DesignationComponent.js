@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import DesignationService from "../../../services/MasterService/DesignationService";
-import DepartmentService from "../../../services/MasterService/DepartmentService";
+import DesignationService from "../../../services/EmployeeMasterService/DesignationService";
+import DepartmentService from "../../../services/EmployeeMasterService/DepartmentService";
 import { BASE_URL_API } from "../../../services/URLConstants";
 import AlertboxComponent from "../../AlertboxComponent/AlertboxComponent";
 export default function DesignationComponent() {

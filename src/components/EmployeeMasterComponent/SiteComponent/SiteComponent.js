@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SiteService from "../../../services/MasterService/SiteService";
-import RegionService from "../../../services/MasterService/RegionService";
+import SiteService from "../../../services/EmployeeMasterService/SiteService";
+import RegionService from "../../../services/EmployeeMasterService/RegionService";
 import AlertboxComponent from "../../AlertboxComponent/AlertboxComponent";
 
 export default function SiteComponent() {

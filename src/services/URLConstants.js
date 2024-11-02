@@ -1,6 +1,6 @@
 export const BASE_URL_API = "http://localhost:9095"
 
-export const LOGIN_UI_BASE_URL = "http://localhost:3001";
+export const LOGIN_UI_BASE_URL = "http://localhost:4000";
 
 /*export const BASE_URL_API="http://localhost:8080/KPP";
 

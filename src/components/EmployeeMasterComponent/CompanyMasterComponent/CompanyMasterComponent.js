@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CompanyMasterService from "../../../services/MasterService/CompanyMasterService";
-import SiteService from "../../../services/MasterService/SiteService";
+import CompanyMasterService from "../../../services/EmployeeMasterService/CompanyMasterService";
+import SiteService from "../../../services/EmployeeMasterService/SiteService";
 import AlertboxComponent from "../../AlertboxComponent/AlertboxComponent";
 export default function CompanyMasterComponent() {
     const [regionId, setRegionId] = useState('');

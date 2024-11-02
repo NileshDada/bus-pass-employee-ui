@@ -5,16 +5,16 @@ import './App.css';
 
 import MainEmployeeComponent from './components/EmployeeComponent/MainEmployeeComponent';
 
-import DesignationComponent from './components/MasterComponent/DesignationComponent/DesignationComponent';
+import DesignationComponent from './components/EmployeeMasterComponent/DesignationComponent/DesignationComponent';
 
 import Cookies from 'js-cookie';
 import AddNewEmployeeComponent from './components/EmployeeComponent/AddNewEmployeeComponent';
-import CompanyMasterComponent from './components/MasterComponent/CompanyMasterComponent/CompanyMasterComponent';
-import DepartmentComponent from './components/MasterComponent/DepartmentComponent/DepartmentComponent';
-import EmployeeTypeComponent from "./components/MasterComponent/EmployeeTypeComponent/EmployeeTypeComponent";
-import RegionComponent from "./components/MasterComponent/RegionComponent/RegionComponent";
-import RoleComponent from "./components/MasterComponent/RoloComponent/RoleComponent";
-import SiteComponent from "./components/MasterComponent/SiteComponent/SiteComponent";
+import CompanyMasterComponent from './components/EmployeeMasterComponent/CompanyMasterComponent/CompanyMasterComponent';
+import DepartmentComponent from './components/EmployeeMasterComponent/DepartmentComponent/DepartmentComponent';
+import EmployeeTypeComponent from "./components/EmployeeMasterComponent/EmployeeTypeComponent/EmployeeTypeComponent";
+import RegionComponent from "./components/EmployeeMasterComponent/RegionComponent/RegionComponent";
+import RoleComponent from "./components/EmployeeMasterComponent/RoloComponent/RoleComponent";
+import SiteComponent from "./components/EmployeeMasterComponent/SiteComponent/SiteComponent";
 
 
 const removeCookies = () => {
