@@ -34,7 +34,7 @@ export default function DesignationComponent() {
             console.log(res.data)
         });
 
-        DepartmentService.getAllDepartmentExceptGM().then((res) => {
+        DepartmentService.ddAllDepartmentExceptGM().then((res) => {
             setDepartments(res.data);
             setDeptId(res.data?.[0].deptId)
 

@@ -55,18 +55,7 @@ export default function MainEmployeeComponent() {
     const [isSuccess, setIsSuccess] = useState(true)
     const [empEIdSearch, setEmpEIdSearch] = useState('');
     const [empTypes, setEmpTypes] = useState([])
-    //for gender selection
-    const onGenderChangeHandler = (event) => {
-        setEmpGender(event);
-    };
-
-    //for blood group selection
-    const onBloodGroupChangeHandler = (event) => {
-        setEmpBloodgroup(event);
-    };
-
-
-
+    
     useEffect(() => {
         EmployeeService.getEmployeeDetailsByPaging().then((res) => {
 
@@ -84,11 +73,11 @@ export default function MainEmployeeComponent() {
             setRoles(res.data);
         });
 
-        EmployeeTypeService.getDDEmployeeType().then((res) => {
+        EmployeeTypeService.ddEmployeeType().then((res) => {
             setEmpTypes(res.data.responseData);
         });
 
-        DesignationService.getAllDepartmentDetails().then((res) => {
+        DesignationService.ddAllDepartmentDetails().then((res) => {
             setDepartments(res.data);
         });
 
@@ -96,11 +85,11 @@ export default function MainEmployeeComponent() {
             setRegions(res.data);
         });
 
-        SiteService.getAllSites().then((res) => {
+        SiteService.ddAllSites().then((res) => {
             setSites(res.data);
         });
 
-        CompanyMasterService.getAllCompanyies().then((res) => {
+        CompanyMasterService.ddAllCompanyies().then((res) => {
             setCompanys(res.data);
         });
 

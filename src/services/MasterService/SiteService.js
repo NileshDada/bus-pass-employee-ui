@@ -64,7 +64,7 @@ class SiteService {
     }
 
     //Get all roles present in department table for designation form
-    getAllRegions() {
+    ddAllRegions() {
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API+"/site/dd-regions-sites")
         } else {
@@ -75,7 +75,7 @@ class SiteService {
     }
 
     //Get all sites present in department table from designation for KPP
-    getSiteDetailsByRegionId(regionId) {
+    ddSiteDetailsByRegionId(regionId) {
         console.log("Site Service regionid=", regionId)
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API+`/site/dd-sites-sites?regionId=${regionId}`)  
@@ -86,7 +86,7 @@ class SiteService {
         
     }
 
-    getAllSites() {
+    ddAllSites() {
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API+"/site/dd-all-sites")
         } else {

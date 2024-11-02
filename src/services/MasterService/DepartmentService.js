@@ -74,7 +74,7 @@ class DepartmentService {
         
     }
 
-    getAllDepartmentExceptGM() {
+    ddAllDepartmentExceptGM() {
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API +"/department/all-dd-dept-except-cust")
         } else {

@@ -7,18 +7,9 @@ const DESIGNATION_URL = BASE_URL_API+"/designation";
 
 class DesignationService {
 
-    getAllDepartmentFromDesig() {
-        if (null != Cookies.get('empId')) {
-            return axios.get(DESIGNATION_URL +"/department")
-        } else {
-            alert("You need to login first")
-            window.location.replace(LOGIN_UI_BASE_URL);
-        }       
-    }
 
- 
     
-    getAllDepartmentDetails() {
+    ddAllDepartmentDetails() {
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API+"/department")
         } else {
@@ -26,31 +17,6 @@ class DesignationService {
             window.location.replace(LOGIN_UI_BASE_URL);
         }       
     }
-
-    //get all designation from department id for dropdown list
-    getDesignationDetailsForKpp(deptId) {
-       
-        if (null != Cookies.get('empId')) {
-            return axios.get(DESIGNATION_URL + `/by-desig-dept?deptId=${deptId}`)
-        } else {
-            alert("You need to login first")
-            window.location.replace(LOGIN_UI_BASE_URL);
-        }
-    }
-
-
-     //get all designation from department id for dropdown list for reporting employee
-     getDesignationDetailsForReporting(data) {
-      
-        if (null != Cookies.get('empId')) {
-            return axios.get(DESIGNATION_URL + `/by-role-dept?roleId=${data.reportingEmpRoleId}&deptId=${data.reportingEmpDeptId}`)
-        } else {
-            alert("You need to login first")
-            window.location.replace(LOGIN_UI_BASE_URL);
-        }
-    }
-
-
 
 
     getDesignationDetailsByPaging() {
@@ -92,6 +58,16 @@ class DesignationService {
     updateDesignationDetails(designation) {
         if (null != Cookies.get('empId')) {
             return axios.put(DESIGNATION_URL, designation)
+        } else {
+            alert("You need to login first")
+            window.location.replace(LOGIN_UI_BASE_URL);
+        }
+    }
+
+    ddDesignationByDeptId(deptId) {
+       
+        if (null != Cookies.get('empId')) {
+            return axios.get(DESIGNATION_URL + `/by-desig-dept?deptId=${deptId}`)
         } else {
             alert("You need to login first")
             window.location.replace(LOGIN_UI_BASE_URL);

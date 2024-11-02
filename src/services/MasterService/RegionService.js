@@ -18,17 +18,6 @@ class RegionService {
 
     }
 
-    //when click on view button of UI
-    getDepartmentById(deptId) {
-        if (null != Cookies.get('empId')) {
-            return axios.get(BASE_URL + `/by-dept-id?deptId=${deptId}`)
-        } else {
-            alert("You need to login first")
-            window.location.replace(LOGIN_UI_BASE_URL);
-        }
-
-    }
-
     updateRegion(region) {
         if (null != Cookies.get('empId')) {
             return axios.put(BASE_URL, region)

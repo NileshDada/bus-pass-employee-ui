@@ -46,13 +46,13 @@ export default function CompanyMasterComponent() {
             console.log(res.data)
         });
 
-        SiteService.getAllRegions().then((res) => {
+        SiteService.ddAllRegions().then((res) => {
             setRegions(res.data);
             setRegionId(res.data?.[0].regionId)
 
             let regionId = res.data?.[0].regionId;
             // console.log("region id =", regionId)
-            SiteService.getSiteDetailsByRegionId(regionId).then((res1) => {
+            SiteService.ddSiteDetailsByRegionId(regionId).then((res1) => {
                 setSites(res1.data);
                 setSiteId(res1.data?.[0]?.siteId)
 
@@ -66,7 +66,7 @@ export default function CompanyMasterComponent() {
     const regionIdChangeHandler = (value) => {
         let regionId = value;
         setRegionId(regionId);
-        SiteService.getSiteDetailsByRegionId(regionId).then((res1) => {
+        SiteService.ddSiteDetailsByRegionId(regionId).then((res1) => {
             setSites(res1.data);
             setSiteId(res1.data?.[0]?.siteId)
             console.log("Inside Site Id=", siteId)

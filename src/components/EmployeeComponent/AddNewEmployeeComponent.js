@@ -105,28 +105,22 @@ export default function AddNewEmployeeComponent() {
     }
 
 
-    const searchEmployeeFirstName = (e) => {
-        EmployeeService.getEmployeeDetailsByEmpFirstNamePaging(e).then((res) => {
-            setEmployees(res.data.responseData.content?.filter((item) => item.roleId !== 3 && item.roleId !== 4));
-            console.log(res.data)
-        });
-    }
-
+   
     useEffect(() => {
 
 
        
         ///
-        EmployeeService.getRegionsFromCompany().then((res) => {
+        EmployeeService.ddRegionsFromCompany().then((res) => {
             setRegions(res.data);
             console.log("res.data?.[0].roleId = ", res.data?.[0].roleId)
             setRegionId(res.data?.[0].regionId)
             let regionId = res.data?.[0].regionId;
-            EmployeeService.getSitesByRegionIdFromCompany(regionId).then((res1) => {
+            EmployeeService.ddSitesByRegionIdFromCompany(regionId).then((res1) => {
                 setSites(res1.data);
                 setSiteId(res1.data?.[0].siteId)
                 let siteId = res1.data?.[0].siteId;
-                EmployeeService.getCompanyFromComany({ regionId, siteId }).then((res2) => {
+                EmployeeService.ddCompanyFromComany({ regionId, siteId }).then((res2) => {
                     setCompanys(res2.data);
                     setCompanyId(res2.data?.[0]?.companyId)
 
@@ -141,17 +135,17 @@ export default function AddNewEmployeeComponent() {
             setRoleId(res.data?.[0].roleId)
         });
 
-      EmployeeTypeService.getDDEmployeeType().then((res) => {
+      EmployeeTypeService.ddEmployeeType().then((res) => {
         setEmpTypes(res.data.responseData);
         setEmpTypeId(res.data.responseData?.[0].empTypeId)
         console.log("empTypeId", res.data.responseData?.[0].empTypeId)
     });
 
-        DepartmentService.getAllDepartmentExceptGM().then((res1) => {
+        DepartmentService.ddAllDepartmentExceptGM().then((res1) => {
             setDepartments(res1.data);
             setDeptId(res1.data?.[0].deptId)
             let deptId = res1.data?.[0].deptId;
-            DesignationService.getDesignationDetailsForKpp(deptId).then((res2) => {
+            DesignationService.ddDesignationByDeptId(deptId).then((res2) => {
                 setDesignations(res2.data);
                 setDesigId(res2.data?.[0]?.desigId)
 
@@ -172,7 +166,7 @@ export default function AddNewEmployeeComponent() {
                     setReportingDesignations(res2.data);
                     setReportingEmpDesigId(res2.data?.[0]?.desigId)
                     let desigId = res2.data?.[0]?.desigId;
-                     EmployeeService.getEmployeeName({ roleId, deptId,desigId }).then((res3) => {
+                     EmployeeService.ddEmployeeName({ roleId, deptId,desigId }).then((res3) => {
                       
                         setReportingEmpId(res3.data?.[0]?.empId)
                         setReportingEmpName(res3.data);
@@ -190,11 +184,11 @@ export default function AddNewEmployeeComponent() {
     const handleRegionIdChange = (value) => {
         setRegionId(value)
         let regionId = value;
-        EmployeeService.getSitesByRegionIdFromCompany(regionId).then((res1) => {
+        EmployeeService.ddSitesByRegionIdFromCompany(regionId).then((res1) => {
             setSites(res1.data);
             setSiteId(res1.data?.[0].siteId)
             let siteId = res1.data?.[0].siteId;
-            EmployeeService.getCompanyFromComany({ regionId, siteId }).then((res2) => {
+            EmployeeService.ddCompanyFromComany({ regionId, siteId }).then((res2) => {
                 setCompanys(res2.data);
                 setCompanyId(res2.data?.[0]?.companyId)
 
@@ -215,7 +209,7 @@ export default function AddNewEmployeeComponent() {
        
         setSiteId(value)
         let siteId = value;
-        EmployeeService.getCompanyFromComany({ regionId, siteId }).then((res2) => {
+        EmployeeService.ddCompanyFromComany({ regionId, siteId }).then((res2) => {
             setCompanys(res2.data);
             setCompanyId(res2.data?.[0]?.companyId)
 
@@ -238,7 +232,7 @@ export default function AddNewEmployeeComponent() {
         
         setDeptId(value)
         let deptId = value;
-        DesignationService.getDesignationDetailsForKpp(deptId).then((res2) => {
+        DesignationService.ddDesignationByDeptId(deptId).then((res2) => {
             setDesignations(res2.data);
             setDesigId(res2.data?.[0]?.desigId)
 
@@ -258,7 +252,7 @@ export default function AddNewEmployeeComponent() {
                 setReportingDesignations(res2.data);
                 setReportingEmpDesigId(res2.data?.[0]?.desigId)
                 let desigId = res2.data?.[0]?.desigId
-                EmployeeService.getEmployeeName({ roleId, deptId,desigId }).then((res3) => {
+                EmployeeService.ddEmployeeName({ roleId, deptId,desigId }).then((res3) => {
                     setReportingEmpId(res3.data?.[0]?.empId)
                     setReportingEmpName(res3.data);
                     console.log("res3.data?.[0]?.empId", res3.data?.[0]?.empId)
@@ -271,7 +265,7 @@ export default function AddNewEmployeeComponent() {
     const handleReportingDesigIdChange = (value) => {
         setReportingEmpDesigId(value)
         let desigId = value
-        EmployeeService.getEmployeeName({desigId }).then((res3) => {
+        EmployeeService.ddEmployeeName({desigId }).then((res3) => {
            setReportingEmpId(res3.data?.[0]?.empId)
            setReportingEmpName(res3.data);
            console.log("res3.data?.[0]?.empId", res3.data?.[0]?.empId)
@@ -286,7 +280,7 @@ export default function AddNewEmployeeComponent() {
             setReportingDesignations(res2.data);
             setReportingEmpDesigId(res2.data?.[0]?.desigId)
             let desigId = res2.data?.[0]?.desigId
-            EmployeeService.getEmployeeName({ roleId, deptId,desigId }).then((res3) => {
+            EmployeeService.ddEmployeeName({ roleId, deptId,desigId }).then((res3) => {
                 setReportingEmpId(res3.data?.[0]?.empId)
                 setReportingEmpName(res3.data);
                 console.log("res3.data?.[0]?.empId", res3.data?.[0]?.empId)

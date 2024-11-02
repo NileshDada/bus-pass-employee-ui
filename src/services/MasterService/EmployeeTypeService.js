@@ -52,7 +52,7 @@ class EmployeeTypeService {
 
    
     //Get all roles present in department table for designation form
-    getDDEmployeeType() {
+    ddEmployeeType() {
         if (null != Cookies.get('empId')) {
             return axios.get(BASE_URL_API+"/employee-type?statusCd=A")
         } else {
