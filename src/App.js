@@ -36,7 +36,7 @@ function App() {
     <nav className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" href="http://localhost:3008" onClick={() => removeCookies()}>FutureBizops</a>
+          <a className="navbar-brand" href="http://localhost:4000" onClick={() => removeCookies()}>FutureBizops</a>
         </div>
         <ul className="nav navbar-nav">
 
@@ -55,7 +55,7 @@ function App() {
   
         
       <li className="dropdown">
-      <a className="dropdown-toggle" data-toggle="dropdown" href="#">Master Records
+      <a className="dropdown-toggle" data-toggle="dropdown" href="#">Employee Master Records
       <span className="caret"></span></a>
       <ul className="dropdown-menu">
       <li><Link to="/role">Role Master</Link></li>
@@ -74,7 +74,7 @@ function App() {
         </ul>
         <ul className="nav navbar-nav navbar-right">
           <li><a href="#">Welcome: {Cookies.get('empEId')}</a></li>
-          <li> <a href="http://localhost:3008" onClick={() => removeCookies()} >Logout </a></li>
+          <li> <a href="http://localhost:4000" onClick={() => removeCookies()} >Logout </a></li>
         </ul>
       </div>
     </nav>
